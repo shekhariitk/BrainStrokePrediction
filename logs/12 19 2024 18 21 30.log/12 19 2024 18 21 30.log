@@ -1,0 +1,27 @@
+[2024-12-19 18:21:31,076] 24 root - INFO - Data Ingestion method starts
+[2024-12-19 18:21:31,084] 29 root - INFO - Dataset read as pandas DataFrame
+[2024-12-19 18:21:31,098] 36 root - INFO - Raw data saved at: artifacts\raw.csv
+[2024-12-19 18:21:31,099] 39 root - INFO - Train-test split in progress
+[2024-12-19 18:21:31,114] 46 root - INFO - Data Ingestion is completed successfully
+[2024-12-19 18:21:31,155] 80 root - INFO - Reading of train and test data has been completed
+[2024-12-19 18:21:31,159] 81 root - INFO - Train DataFrame Head: 
+    gender   age hypertension heart_disease ever_married work_type Residence_type  avg_glucose_level   bmi   smoking_status  stroke
+0  Female  31.0           no            no          Yes   Private          Urban              60.06  25.5           smokes       0
+1  Female  16.0           no            no           No   Private          Urban              75.06  23.5     never smoked       0
+2  Female  23.0           no            no           No  Govt_job          Urban              84.46  28.4  formerly smoked       0
+3  Female  82.0           no            no          Yes   Private          Urban              82.63  17.9           smokes       0
+4    Male   2.0           no            no           No  children          Rural             103.25  19.4          Unknown       0
+[2024-12-19 18:21:31,169] 82 root - INFO - Test DataFrame Head: 
+    gender   age hypertension heart_disease ever_married work_type Residence_type  avg_glucose_level   bmi   smoking_status  stroke
+0    Male  32.0           no            no          Yes   Private          Rural             102.13  32.3     never smoked       0
+1  Female  42.0           no            no           No   Private          Urban              84.03  31.4     never smoked       0
+2    Male  66.0          yes            no          Yes   Private          Rural              74.90  32.1     never smoked       0
+3  Female  21.0           no            no           No   Private          Rural              71.06  25.3  formerly smoked       0
+4    Male  47.0           no            no          Yes   Private          Rural              88.49  22.2           smokes       0
+[2024-12-19 18:21:31,169] 86 root - INFO - Obtaining Preprocessor Object
+[2024-12-19 18:21:31,169] 40 root - INFO - Data Transformation Initiated
+[2024-12-19 18:21:31,190] 108 root - INFO - Applying Preprocessor object to the train and test datasets
+[2024-12-19 18:21:31,190] 122 root - INFO - Preprocessor is created and saved
+[2024-12-19 18:21:31,190] 37 root - INFO - Splitting independent and Dependent Variable
+[2024-12-19 18:21:36,993] 65 root - INFO - Model report info : {'LogisticRegression': 0.7488119484046164, 'DecisionTreeClassifier': 0.8968092328581126, 'RandomForestClassifier': 0.9280380176510523, 'Extratressclassifier': 0.9314324507807196, 'KNeighborsClassifier': 0.8431771894093686, 'AdaBoostClassifier': 0.8316361167684997, 'GradientBoostingClassifier': 0.8893414799728445, 'SVC': 0.8105906313645621}
+[2024-12-19 18:21:36,994] 77 root - INFO - Best model found , Best model name is Extratressclassifier and that Accuracy Score: 0.9314324507807196

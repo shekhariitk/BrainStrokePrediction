@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: BrainStrokePrediction
+Version: 0.0.1
+Author: Shekhar
+Author-email: s.sumanpathak513@gmail.com
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: streamlit
+Requires-Dist: imbalanced-learn

@@ -1,0 +1,5 @@
+[2024-12-19 17:26:36,397] 24 root - INFO - Data Ingestion method starts
+[2024-12-19 17:26:36,406] 29 root - INFO - Dataset read as pandas DataFrame
+[2024-12-19 17:26:36,421] 36 root - INFO - Raw data saved at: artifacts\raw.csv
+[2024-12-19 17:26:36,421] 39 root - INFO - Train-test split in progress
+[2024-12-19 17:26:36,437] 46 root - INFO - Data Ingestion is completed successfully
