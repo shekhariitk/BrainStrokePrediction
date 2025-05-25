@@ -1,1 +1,4 @@
 venv/
+catboost_info/
+build/
+BrainStrokePrediction.egg-info/

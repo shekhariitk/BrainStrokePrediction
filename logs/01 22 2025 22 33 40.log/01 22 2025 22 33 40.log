@@ -1,0 +1,72 @@
+[2025-01-22 22:33:41,729] 24 root - INFO - Data Ingestion method starts
+[2025-01-22 22:33:41,737] 29 root - INFO - Dataset read as pandas DataFrame
+[2025-01-22 22:33:41,753] 36 root - INFO - Raw data saved at: artifacts\raw.csv
+[2025-01-22 22:33:41,753] 39 root - INFO - Train-test split in progress
+[2025-01-22 22:33:41,773] 46 root - INFO - Data Ingestion is completed successfully
+[2025-01-22 22:33:41,820] 65 root - INFO - Reading of train and test data has been completed
+[2025-01-22 22:33:41,824] 66 root - INFO - Train DataFrame Head: 
+    gender   age hypertension heart_disease ever_married work_type Residence_type  avg_glucose_level   bmi   smoking_status  stroke
+0  Female  31.0           no            no          Yes   Private          Urban              60.06  25.5           smokes       0
+1  Female  16.0           no            no           No   Private          Urban              75.06  23.5     never smoked       0
+2  Female  23.0           no            no           No  Govt_job          Urban              84.46  28.4  formerly smoked       0
+3  Female  82.0           no            no          Yes   Private          Urban              82.63  17.9           smokes       0
+4    Male   2.0           no            no           No  children          Rural             103.25  19.4          Unknown       0
+[2025-01-22 22:33:41,833] 67 root - INFO - Test DataFrame Head: 
+    gender   age hypertension heart_disease ever_married work_type Residence_type  avg_glucose_level   bmi   smoking_status  stroke
+0    Male  32.0           no            no          Yes   Private          Rural             102.13  32.3     never smoked       0
+1  Female  42.0           no            no           No   Private          Urban              84.03  31.4     never smoked       0
+2    Male  66.0          yes            no          Yes   Private          Rural              74.90  32.1     never smoked       0
+3  Female  21.0           no            no           No   Private          Rural              71.06  25.3  formerly smoked       0
+4    Male  47.0           no            no          Yes   Private          Rural              88.49  22.2           smokes       0
+[2025-01-22 22:33:41,833] 25 root - INFO - Data Transformation Initiated
+[2025-01-22 22:33:41,833] 52 root - INFO - Pipeline completed
+[2025-01-22 22:33:41,854] 86 root - INFO - Applying Preprocessor object to the train and test datasets
+[2025-01-22 22:33:41,856] 95 root - INFO - Preprocessor is created and saved
+[2025-01-22 22:33:41,856] 41 root - INFO - Splitting independent and Dependent Variable
+[2025-01-22 22:33:41,864] 33 root - INFO - model:LogisticRegression() is started
+[2025-01-22 22:33:43,931] 45 root - INFO - model:LogisticRegression(C=1, solver='liblinear') is Evaluated and best param is {'C': 1, 'max_iter': 100, 'solver': 'liblinear'}
+[2025-01-22 22:33:43,945] 33 root - INFO - model:LogisticRegressionCV(cv=5) is started
+[2025-01-22 22:33:45,384] 45 root - INFO - model:LogisticRegressionCV(cv=3) is Evaluated and best param is {'Cs': 10, 'cv': 3}
+[2025-01-22 22:33:45,397] 33 root - INFO - model:DecisionTreeClassifier() is started
+[2025-01-22 22:33:46,569] 45 root - INFO - model:DecisionTreeClassifier(max_depth=20) is Evaluated and best param is {'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2}
+[2025-01-22 22:33:46,582] 33 root - INFO - model:RandomForestClassifier() is started
+[2025-01-22 22:34:11,613] 45 root - INFO - model:RandomForestClassifier(n_estimators=200) is Evaluated and best param is {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+[2025-01-22 22:34:11,707] 33 root - INFO - model:ExtraTreesClassifier() is started
+[2025-01-22 22:34:16,268] 45 root - INFO - model:ExtraTreesClassifier() is Evaluated and best param is {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+[2025-01-22 22:34:16,357] 33 root - INFO - model:KNeighborsClassifier() is started
+[2025-01-22 22:34:17,981] 45 root - INFO - model:KNeighborsClassifier(n_neighbors=3, weights='distance') is Evaluated and best param is {'algorithm': 'auto', 'n_neighbors': 3, 'weights': 'distance'}
+[2025-01-22 22:34:18,158] 33 root - INFO - model:AdaBoostClassifier() is started
+[2025-01-22 22:34:26,795] 45 root - INFO - model:AdaBoostClassifier(learning_rate=1, n_estimators=200) is Evaluated and best param is {'learning_rate': 1, 'n_estimators': 200}
+[2025-01-22 22:34:26,876] 33 root - INFO - model:GradientBoostingClassifier() is started
+[2025-01-22 22:35:30,853] 45 root - INFO - model:GradientBoostingClassifier(learning_rate=0.5, max_depth=7, n_estimators=200) is Evaluated and best param is {'learning_rate': 0.5, 'max_depth': 7, 'n_estimators': 200}
+[2025-01-22 22:35:30,884] 33 root - INFO - model:SVC() is started
+[2025-01-22 22:35:41,913] 45 root - INFO - model:SVC(C=10, gamma='auto') is Evaluated and best param is {'C': 10, 'gamma': 'auto', 'kernel': 'rbf'}
+[2025-01-22 22:35:42,216] 33 root - INFO - model:XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=100, n_jobs=None, num_parallel_tree=None,
+              predictor=None, random_state=None, ...) is started
+[2025-01-22 22:35:52,212] 45 root - INFO - model:XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.2, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=7, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=200, n_jobs=None, num_parallel_tree=None,
+              predictor=None, random_state=None, ...) is Evaluated and best param is {'learning_rate': 0.2, 'max_depth': 7, 'n_estimators': 200}
+[2025-01-22 22:35:52,229] 33 root - INFO - model:LGBMClassifier() is started
+[2025-01-22 22:35:54,484] 45 root - INFO - model:LGBMClassifier(learning_rate=0.2, max_depth=7, n_estimators=200) is Evaluated and best param is {'learning_rate': 0.2, 'max_depth': 7, 'n_estimators': 200}
+[2025-01-22 22:35:54,507] 33 root - INFO - model:<catboost.core.CatBoostClassifier object at 0x000001BFE213A8B0> is started
+[2025-01-22 22:36:10,732] 45 root - INFO - model:<catboost.core.CatBoostClassifier object at 0x000001BFE213A8B0> is Evaluated and best param is {'depth': 7, 'iterations': 200, 'learning_rate': 0.2}
+[2025-01-22 22:36:10,753] 138 root - INFO - Model report info: {'LogisticRegression': {'Accuracy': 0.7965738758029979, 'Precision': 0.8001064083720293, 'Recall': 0.7965738758029979, 'F1 Score': 0.7959734801548268, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.83      0.74      0.78      1401\n         1.0       0.77      0.85      0.81      1401\n\n    accuracy                           0.80      2802\n   macro avg       0.80      0.80      0.80      2802\nweighted avg       0.80      0.80      0.80      2802\n'}, 'LogisticRegressionCV': {'Accuracy': 0.7947894361170592, 'Precision': 0.7987345628020321, 'Recall': 0.7947894361170593, 'F1 Score': 0.794109682678569, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.83      0.74      0.78      1401\n         1.0       0.76      0.85      0.81      1401\n\n    accuracy                           0.79      2802\n   macro avg       0.80      0.79      0.79      2802\nweighted avg       0.80      0.79      0.79      2802\n'}, 'DecisionTreeClassifier': {'Accuracy': 0.7480371163454675, 'Precision': 0.7845735057987593, 'Recall': 0.7480371163454675, 'F1 Score': 0.7396815454258343, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.68      0.93      0.79      1401\n         1.0       0.89      0.57      0.69      1401\n\n    accuracy                           0.75      2802\n   macro avg       0.78      0.75      0.74      2802\nweighted avg       0.78      0.75      0.74      2802\n'}, 'RandomForestClassifier': {'Accuracy': 0.7762312633832976, 'Precision': 0.8267761571841852, 'Recall': 0.7762312633832977, 'F1 Score': 0.7672302054042853, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.70      0.97      0.81      1401\n         1.0       0.96      0.58      0.72      1401\n\n    accuracy                           0.78      2802\n   macro avg       0.83      0.78      0.77      2802\nweighted avg       0.83      0.78      0.77      2802\n'}, 'ExtratreesClassifier': {'Accuracy': 0.7326909350463955, 'Precision': 0.8019556249008304, 'Recall': 0.7326909350463955, 'F1 Score': 0.7164290647041474, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.66      0.97      0.78      1401\n         1.0       0.95      0.49      0.65      1401\n\n    accuracy                           0.73      2802\n   macro avg       0.80      0.73      0.72      2802\nweighted avg       0.80      0.73      0.72      2802\n'}, 'KNeighborsClassifier': {'Accuracy': 0.6538187009279086, 'Precision': 0.7073799143734584, 'Recall': 0.6538187009279086, 'F1 Score': 0.6299232325652959, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.60      0.91      0.72      1401\n         1.0       0.81      0.40      0.54      1401\n\n    accuracy                           0.65      2802\n   macro avg       0.71      0.65      0.63      2802\nweighted avg       0.71      0.65      0.63      2802\n'}, 'AdaBoostClassifier': {'Accuracy': 0.892933618843683, 'Precision': 0.8938075871418396, 'Recall': 0.8929336188436832, 'F1 Score': 0.8928741833663657, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.88      0.92      0.90      1401\n         1.0       0.91      0.87      0.89      1401\n\n    accuracy                           0.89      2802\n   macro avg       0.89      0.89      0.89      2802\nweighted avg       0.89      0.89      0.89      2802\n'}, 'GradientBoostingClassifier': {'Accuracy': 0.9064953604568166, 'Precision': 0.9160213717706795, 'Recall': 0.9064953604568167, 'F1 Score': 0.9059570139862112, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.85      0.98      0.91      1401\n         1.0       0.98      0.83      0.90      1401\n\n    accuracy                           0.91      2802\n   macro avg       0.92      0.91      0.91      2802\nweighted avg       0.92      0.91      0.91      2802\n'}, 'SVC': {'Accuracy': 0.7291220556745182, 'Precision': 0.7645990426162841, 'Recall': 0.7291220556745182, 'F1 Score': 0.7197274393172937, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.67      0.91      0.77      1401\n         1.0       0.86      0.55      0.67      1401\n\n    accuracy                           0.73      2802\n   macro avg       0.76      0.73      0.72      2802\nweighted avg       0.76      0.73      0.72      2802\n'}, 'XGBClassifier': {'Accuracy': 0.9004282655246253, 'Precision': 0.9095423944307808, 'Recall': 0.9004282655246252, 'F1 Score': 0.899871188339759, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.85      0.98      0.91      1401\n         1.0       0.97      0.83      0.89      1401\n\n    accuracy                           0.90      2802\n   macro avg       0.91      0.90      0.90      2802\nweighted avg       0.91      0.90      0.90      2802\n'}, 'LGBMClassifier': {'Accuracy': 0.9043540328336902, 'Precision': 0.9143873183878886, 'Recall': 0.9043540328336903, 'F1 Score': 0.9037715539335287, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.85      0.98      0.91      1401\n         1.0       0.98      0.83      0.90      1401\n\n    accuracy                           0.90      2802\n   macro avg       0.91      0.90      0.90      2802\nweighted avg       0.91      0.90      0.90      2802\n'}, 'CatBoostClassifier': {'Accuracy': 0.8443968593861527, 'Precision': 0.8673217044385674, 'Recall': 0.8443968593861527, 'F1 Score': 0.8419305487698843, 'Classification Report': '              precision    recall  f1-score   support\n\n         0.0       0.78      0.97      0.86      1401\n         1.0       0.96      0.72      0.82      1401\n\n    accuracy                           0.84      2802\n   macro avg       0.87      0.84      0.84      2802\nweighted avg       0.87      0.84      0.84      2802\n'}}
+[2025-01-22 22:36:10,753] 191 root - INFO - Best model found: GradientBoostingClassifier with Recall: 0.9064953604568167, F1 Score: 0.9059570139862112, Precision: 0.9160213717706795
+[2025-01-22 22:36:10,754] 144 root - INFO - Best model found: GradientBoostingClassifier(learning_rate=0.5, max_depth=7, n_estimators=200)

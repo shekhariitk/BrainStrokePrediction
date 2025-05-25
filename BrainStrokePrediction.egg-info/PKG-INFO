@@ -10,3 +10,6 @@ Requires-Dist: matplotlib
 Requires-Dist: scikit-learn
 Requires-Dist: streamlit
 Requires-Dist: imbalanced-learn
+Requires-Dist: xgboost==1.7.5
+Requires-Dist: lightgbm==3.3.2
+Requires-Dist: catboost==1.1.1
